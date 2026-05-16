@@ -1,61 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Station Awards</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+  <div class="noise"></div>
 
-  <div class="shell">
-
+  <main class="shell">
     <section class="hero">
+      <div class="hero-left">
+        <div class="badge">🏆 AWARDS OFFICIELS</div>
 
-      <div class="badge">🏆 AWARDS OFFICIELS</div>
+        <h1 id="title">LA STATION AWARDS</h1>
 
-      <div class="cup">🏆</div>
-
-      <h1>
-        LA <br>
-        STATION <br>
-        AWARDS
-      </h1>
-
-      <p class="hero-desc">
-        Vote pour les membres de La Station dans plusieurs catégories :
-        style, humour, charisme, vocal, présence...
-        Les résultats seront révélés à la fin.
-      </p>
-
-      <div class="deadline-box">
-        <span>FIN DES VOTES</span>
-        <strong>25 MAI • 23:59</strong>
+        <p id="subtitle">
+          Vote pour les membres de La Station dans plusieurs catégories :
+          style, humour, charisme, vocal, présence...
+        </p>
       </div>
 
+      <div class="hero-right">
+        <div class="info-card">
+          <h2>À TOI DE JOUER</h2>
+          <p>Chaque catégorie a son vote. Tu choisis, tu valides, et les résultats tombent à la fin.</p>
+
+          <div class="rules">
+            <span>Votes anonymes</span>
+            <span>Un seul passage</span>
+            <span>Pas de retour après validation</span>
+          </div>
+        </div>
+
+        <div class="deadline">
+          <span>FIN DES VOTES</span>
+          <strong id="deadlineText">25 MAI</strong>
+          <small>23:59</small>
+        </div>
+      </div>
     </section>
 
-    <section class="panel">
-
+    <section class="panel intro" id="introPanel">
       <h2>ENTRE TON PSEUDO DISCORD</h2>
-
-      <p>
-        Il sert uniquement à éviter les doubles votes.
-        Personne ne verra qui a voté pour qui.
-      </p>
-
-      <input
-        type="text"
-        placeholder="ex : rayan92"
-      />
-
-      <button>
-        Commencer
-      </button>
-
+      <p>Il sert juste à éviter les doubles votes. Les résultats publics ne montrent pas qui a voté quoi.</p>
+      <input id="username" maxlength="40" placeholder="ex : rayan92" autocomplete="off" />
+      <button id="startBtn">Commencer</button>
     </section>
 
-  </div>
+    <form class="panel vote hidden" id="voteForm">
+      <div class="topline">
+        <span id="progress">0/0</span>
+        <span>La Station</span>
+      </div>
 
+      <div id="categoryWrap"></div>
+
+      <div class="actions">
+        <button type="button" id="prevBtn">Retour</button>
+        <button type="button" id="nextBtn">Suivant</button>
+        <button type="submit" id="submitBtn" class="hidden">Valider mes votes</button>
+      </div>
+
+      <p class="warning">Après validation, impossible de revoter depuis la même connexion.</p>
+    </form>
+
+    <section class="panel done hidden" id="donePanel">
+      <h2>Vote envoyé.</h2>
+      <p>Ton passage est enregistré. Maintenant attends le reveal.</p>
+    </section>
+
+    <section class="panel error hidden" id="errorPanel">
+      <h2>Erreur</h2>
+      <p id="errorText"></p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
 </body>
 </html>
