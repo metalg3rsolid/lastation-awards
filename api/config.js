@@ -1,60 +1,70 @@
 export default function handler(req, res) {
   res.status(200).json({
     title: "🏆 LA STATION AWARDS",
-    subtitle: "Vote pour les membres dans plusieurs catégories : style, humour, présence, charisme, vocal, débats… Les votes restent anonymes, les gagnants seront révélés à la fin.",
+    subtitle: "Vote pour les membres dans plusieurs catégories : drôle, génant, bandeur, beau, pute, hypocrite… Les votes restent anonymes, les gagnants seront révélés à la fin.",
     deadline: "2026-05-25T23:59:00+02:00",
     participants: [
-      "Adam",
+      "Adem",
       "Rayan",
       "Nene",
       "Didi",
-      "Serkan",
-      "Momo",
-      "Inès",
-      "Yanis",
-      "Sofia",
-      "Amine"
+      "Moussa",
+      "Karim",
+      "Waswi",
+      "Soufiane",
+      "Npbsom",
+      "Flitch",
+      "Hajar",
+      "Terry",
+      "Nami",
+      "Assou",
+      "Sabrina",
+      "Helin",
+      "Farah",
+      "Shaïma",
+      "Kytana"
+      
     ],
     categories: [
       {
         id: "presence",
-        title: "La meilleure présence",
-        description: "Celui ou celle qui ramène une vraie énergie dès qu'il/elle est là."
+        title: "Le plus gros bandeur ou la plus grosse bandeuse",
+        description: "Celui ou celle qui bande sur tout le monde, qui crois que Discord c'est pour hwi."
       },
       {
         id: "charisme",
-        title: "Le plus charismatique",
-        description: "Pas forcément le plus bruyant. Celui/celle qui capte l’attention."
+        title: "Le ou la plus drôle",
+        description: "Celui ou celle qui est vraiment super drôle, super fun."
       },
       {
         id: "drole",
-        title: "Le/la plus drôle",
-        description: "La personne qui sort les meilleures phrases sans forcer."
+        title: "Le/la plus génant(e)",
+        description: "La personne qui est juste trop chelou, grave bizarre, hyper génant"
       },
       {
         id: "mysterieux",
-        title: "Le/la plus mystérieux(se)",
-        description: "Toujours là, jamais vraiment cerné(e)."
+        title: "Le/la plus beau/belle",
+        description: "Celui ou celle qui est juste trop beau, super beau ou super belle, genre magnifique."
       },
       {
         id: "retour",
-        title: "Le retour le plus légendaire",
-        description: "Disparaît, revient, et fait comme si de rien n'était."
+        title: "Le plus ou la plus hypocrite ",
+        description: "Gros ou grosse hypocrite qui parle derrière le dos des gens."
       },
       {
         id: "vocal",
-        title: "Le/la boss du vocal",
-        description: "Quand il/elle arrive, le vocal change directement."
+        title: "Le/la plus grosse pute du serveur",
+        description: "Pas besoin d'expliquer."
       },
       {
         id: "debats",
-        title: "Celui/celle qui lance les débats",
-        description: "Une phrase, et tout le serveur part en réunion de crise."
+        title: "Le/la plus moche du serveur",
+        description: "Super moche, super horrible !"
       },
       {
         id: "style",
-        title: "Le meilleur style",
-        description: "Photo, tenue, vibe, manière d’être : ça dégage quelque chose."
+        title: "Le plus inutile",
+        description: "Celui qui sert a rien dans le serveur on sait pas pourquoi elle/il est là"
       }
     ]
   });
