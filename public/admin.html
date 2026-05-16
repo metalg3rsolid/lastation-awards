@@ -1,1 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - La Station</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="badge">ADMIN</div>
+      <h1>RÉSULTATS</h1>
+      <p id="adminTotal">Chargement...</p>
+    </section>
 
+    <section class="panel">
+      <div id="adminResults"></div>
+    </section>
+  </main>
+
+  <script>
+    const code = "lastation2026";
+
+    async function loadResults() {
+      const res = await fetch("/api/vote?code=" + code);
+      const data = await res.json();
+
+      if (!data.ok) {
+        document.getElementById("adminTotal").textContent = data.message;
+        return;
+      }
+
+      document.getElementById("adminTotal").textContent =
+        data.total + " votes enregistrés";
+
+      let html = "";
+
+      for (const [category, nominees] of Object.entries(data.results)) {
+        const ranking = Object.entries(nominees)
+          .sort((a,b) => b[1] - a[1]);
+
+        html += `
+          <div class="category-card" style="margin-bottom:20px;">
+            <div class="category-number">${category}</div>
+            <h3>${category}</h3>
+            ${ranking.map(([name, score]) => `
+              <p><strong>${name}</strong> — ${score} vote(s)</p>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      document.getElementById("adminResults").innerHTML = html;
+    }
+
+    loadResults();
+  </script>
+</body>
+</html>
