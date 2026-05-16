@@ -205,6 +205,10 @@ select {
   font-weight: 900;
   outline: none;
   box-shadow: 6px 6px 0 var(--black);
+  appearance: none;
+  -webkit-appearance: none;
+  max-height: 58px;
+  cursor: pointer;
 }
 
 button {
