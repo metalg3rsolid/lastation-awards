@@ -69,16 +69,17 @@ body {
 }
 
 h1 {
-  font-family: Anton, Impact, sans-serif;
-  font-size: clamp(64px, 12vw, 150px);
-  line-height: .82;
-  margin: 34px 0 20px;
-  max-width: 610px;
+  font-family: "Lilita One", cursive;
+  font-size: clamp(48px, 9vw, 110px);
+  line-height: .85;
+  letter-spacing: -2px;
+  margin: 0;
   text-transform: uppercase;
-  color: var(--cream);
+  color: #fff1cf;
+
   text-shadow:
-    6px 6px 0 var(--black),
-    11px 11px 0 var(--orange);
+    4px 4px 0 #ff8a1f,
+    8px 8px 0 rgba(0,0,0,.8);
 }
 
 .hero-left p {
