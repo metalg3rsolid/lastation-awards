@@ -22,7 +22,8 @@ export default function handler(req, res) {
       "Helin",
       "Farah",
       "Shaïma",
-      "Kytana"
+      "Kytana",
+      "Aucun"
       
     ],
     categories: [
