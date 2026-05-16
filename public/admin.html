@@ -20,7 +20,7 @@
   </main>
 
   <script>
-    const code = "Code admin ?";
+    const code = prompt("Code admin ?");
 
     async function loadResults() {
       const res = await fetch("/api/vote?code=" + code);
