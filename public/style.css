@@ -209,9 +209,11 @@ select {
   appearance: none;
   -webkit-appearance: none;
  
-  max-height: 58px;
+  min-height: 72px;
+  line-height: 1.2;
+  padding: 0 24px;
+ 
   cursor: pointer;
-  
   overflow: hidden;
   text-overflow: ellipsis;
 }
