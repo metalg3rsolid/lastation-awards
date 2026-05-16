@@ -17,12 +17,15 @@ export default function handler(req, res) {
       "Hajar",
       "Terry",
       "Nami",
+      "Anis",
       "Assou",
       "Sabrina",
       "Helin",
       "Farah",
       "Shaïma",
       "Kytana",
+      "Nayou",
+      "Lacovid",
       "Aucun"
       
     ],
