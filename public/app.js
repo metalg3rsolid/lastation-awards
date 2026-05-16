@@ -11,10 +11,12 @@ async function loadConfig() {
 
   $("title").textContent = config.title;
   $("subtitle").textContent = config.subtitle;
-  $("deadlineText").textContent = new Date(config.deadline).toLocaleString("fr-FR", {
-    dateStyle: "long",
-    timeStyle: "short"
-  });
+
+  const date = new Date(config.deadline);
+  $("deadlineText").textContent = date.toLocaleDateString("fr-FR", {
+    day: "2-digit",
+    month: "short"
+  }).toUpperCase();
 }
 
 function showError(message) {
