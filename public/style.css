@@ -270,15 +270,16 @@ button:disabled {
 }
 
 .category-card h3 {
-  font-family: Anton, Impact, sans-serif;
-  font-size: clamp(42px, 7vw, 82px);
-  line-height: .9;
-  margin: 20px 0 14px;
-  color: var(--cream);
+  font-family: "Lilita One", cursive;
+  font-size: clamp(26px, 4vw, 52px);
+  line-height: .95;
+  margin: 12px 0 18px;
+  max-width: 90%;
+  color: #fff1cf;
   text-transform: uppercase;
   text-shadow:
-    4px 4px 0 var(--black),
-    8px 8px 0 var(--orange);
+    3px 3px 0 #ff8a1f,
+    6px 6px 0 rgba(0,0,0,.8);
 }
 
 .category-card p {
