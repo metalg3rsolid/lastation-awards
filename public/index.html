@@ -1,59 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Station Awards</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="noise"></div>
-  <main class="shell">
+
+  <div class="shell">
+
     <section class="hero">
-      <div class="badge">🏆 AWARDS DE LA STATION</div>
-      <h1 id="title">LA STATION AWARDS</h1>
-      <p id="subtitle">Plusieurs catégories, vote pour celui ou celles qui mérite d'être dans sa catégories !</p>
-      <div class="deadline">
-        <span>Résultat le </span>
-        <strong id="deadlineText">chargement...</strong>
-      </div>
-    </section>
 
-    <section class="panel intro" id="introPanel">
-      <h2>Entre ton pseudo Discord</h2>
-      <p>Il sert juste à éviter les doubles votes. Les résultats publics ne montrent pas qui a voté quoi.</p>
-      <input id="username" maxlength="40" placeholder="ex: rayan92" autocomplete="off" />
-      <button id="startBtn">Commencer le vote</button>
-    </section>
+      <div class="badge">🏆 AWARDS OFFICIELS</div>
 
-    <form class="panel vote hidden" id="voteForm">
-      <div class="topline">
-        <span id="progress">0/0</span>
-        <span>La Station</span>
-      </div>
+      <div class="cup">🏆</div>
 
-      <div id="categoryWrap"></div>
+      <h1>
+        LA <br>
+        STATION <br>
+        AWARDS
+      </h1>
 
-      <div class="actions">
-        <button type="button" id="prevBtn">Retour</button>
-        <button type="button" id="nextBtn">Suivant</button>
-        <button type="submit" id="submitBtn" class="hidden">Valider mes votes</button>
+      <p class="hero-desc">
+        Vote pour les membres de La Station dans plusieurs catégories :
+        style, humour, charisme, vocal, présence...
+        Les résultats seront révélés à la fin.
+      </p>
+
+      <div class="deadline-box">
+        <span>FIN DES VOTES</span>
+        <strong>25 MAI • 23:59</strong>
       </div>
 
-      <p class="warning">Après validation, impossible de revoter depuis la même connexion.</p>
-    </form>
-
-    <section class="panel done hidden" id="donePanel">
-      <h2>Vote envoyé.</h2>
-      <p>Ton passage est enregistré. Maintenant attends le reveal.</p>
     </section>
 
-    <section class="panel error hidden" id="errorPanel">
-      <h2>Erreur</h2>
-      <p id="errorText"></p>
-    </section>
-  </main>
+    <section class="panel">
 
-  <script src="/app.js"></script>
+      <h2>ENTRE TON PSEUDO DISCORD</h2>
+
+      <p>
+        Il sert uniquement à éviter les doubles votes.
+        Personne ne verra qui a voté pour qui.
+      </p>
+
+      <input
+        type="text"
+        placeholder="ex : rayan92"
+      />
+
+      <button>
+        Commencer
+      </button>
+
+    </section>
+
+  </div>
+
 </body>
 </html>
