@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Station Awards</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="shell">
+    <section class="hero">
+      <div class="badge">VOTE ANONYME</div>
+      <h1 id="title">LA STATION AWARDS</h1>
+      <p id="subtitle">Votes anonymes. Un seul passage. Pas de retour en arrière.</p>
+      <div class="deadline">
+        <span>Deadline</span>
+        <strong id="deadlineText">chargement...</strong>
+      </div>
+    </section>
+
+    <section class="panel intro" id="introPanel">
+      <h2>Entre ton pseudo Discord</h2>
+      <p>Il sert juste à éviter les doubles votes. Les résultats publics ne montrent pas qui a voté quoi.</p>
+      <input id="username" maxlength="40" placeholder="ex: rayan92" autocomplete="off" />
+      <button id="startBtn">Commencer le vote</button>
+    </section>
+
+    <form class="panel vote hidden" id="voteForm">
+      <div class="topline">
+        <span id="progress">0/0</span>
+        <span>La Station</span>
+      </div>
+
+      <div id="categoryWrap"></div>
+
+      <div class="actions">
+        <button type="button" id="prevBtn">Retour</button>
+        <button type="button" id="nextBtn">Suivant</button>
+        <button type="submit" id="submitBtn" class="hidden">Valider mes votes</button>
+      </div>
+
+      <p class="warning">Après validation, impossible de revoter depuis la même connexion.</p>
+    </form>
+
+    <section class="panel done hidden" id="donePanel">
+      <h2>Vote envoyé.</h2>
+      <p>Ton passage est enregistré. Maintenant attends le reveal.</p>
+    </section>
+
+    <section class="panel error hidden" id="errorPanel">
+      <h2>Erreur</h2>
+      <p id="errorText"></p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
