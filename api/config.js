@@ -1,7 +1,7 @@
 export default function handler(req, res) {
   res.status(200).json({
-    title: "LA STATION AWARDS",
-    subtitle: "Votes anonymes. Un seul passage. Pas de retour en arrière.",
+    title: "🏆 LA STATION AWARDS",
+    subtitle: "Vote pour les membres dans plusieurs catégories : style, humour, présence, charisme, vocal, débats… Les votes restent anonymes, les gagnants seront révélés à la fin.",
     deadline: "2026-05-25T23:59:00+02:00",
     participants: [
       "Adam",
