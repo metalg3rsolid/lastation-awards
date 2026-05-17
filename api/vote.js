@@ -125,4 +125,51 @@ export default async function handler(req, res) {
   }
 
   return bad(res, 405, "Méthode non autorisée.");
+if (req.method === "GET" && req.query.public === "results") {
+
+  const { data: votes } = await supabase
+    .from("votes")
+    .select("*");
+
+  const scores = {};
+
+  votes.forEach(vote => {
+
+    Object.entries(vote.choices).forEach(([category, nominee]) => {
+
+      if (!scores[category]) {
+        scores[category] = {};
+      }
+
+      if (!scores[category][nominee]) {
+        scores[category][nominee] = 0;
+      }
+
+      scores[category][nominee]++;
+    });
+
+  });
+
+  const results = [];
+
+  for (const [category, nominees] of Object.entries(scores)) {
+
+    const top3 = Object.entries(nominees)
+      .sort((a,b)=>b[1]-a[1])
+      .slice(0,3)
+      .map(([name, votes]) => ({
+        name,
+        votes
+      }));
+
+    results.push({
+      name: category,
+      top3
+    });
+
+  }
+
+  return res.status(200).json(results);
+}
+
 }
