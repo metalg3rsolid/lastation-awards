@@ -17,58 +17,42 @@
         <h1 id="title">LA STATION AWARDS</h1>
 
         <p id="subtitle">
-          Vote pour les membres de La Station dans plusieurs catégories :
-          style, humour, charisme, vocal, présence...
+          Les votes sont terminés. Découvre maintenant le top 3 de chaque catégorie
+          et les grands gagnants de La Station Awards.
         </p>
       </div>
 
       <div class="hero-right">
         <div class="info-card">
-          <h2>À TOI DE JOUER</h2>
-          <p>Chaque catégorie a son vote. Tu choisis, tu valides, et les résultats tombent à la fin.</p>
+          <h2>RÉSULTATS DISPONIBLES</h2>
+          <p>Les catégories sont prêtes. Clique, révèle, et découvre les vainqueurs.</p>
 
           <div class="rules">
-            <span>Votes anonymes</span>
-            <span>Un seul passage</span>
-            <span>Pas de retour après validation</span>
+            <span>Top 3 par catégorie</span>
+            <span>Reveal interactif</span>
+            <span>Résultats officiels</span>
           </div>
         </div>
 
         <div class="deadline">
-          <span>FIN DES VOTES</span>
-          <strong id="deadlineText">20 MAI</strong>
-          <small>18:00</small>
+          <span>LES VOTES</span>
+          <strong id="deadlineText">SONT FINIS</strong>
+          <small>RÉSULTATS EN LIGNE</small>
         </div>
       </div>
     </section>
 
     <section class="panel intro" id="introPanel">
-      <h2>ENTRE TON PSEUDO DISCORD</h2>
-      <p>Il sert juste à éviter les doubles votes. Les résultats publics ne montrent pas qui a voté quoi.</p>
-      <input id="username" maxlength="40" placeholder="ex : Adem lpb" autocomplete="off" />
-      <button id="startBtn">Commencer</button>
+      <h2>VOIR LES RÉSULTATS</h2>
+      <p>Les votes sont fermés. Clique ici pour découvrir les vainqueurs catégorie par catégorie.</p>
+      <button id="startBtn" onclick="window.location.href='/resultat.html'">
+        Découvrir les résultats
+      </button>
     </section>
 
-    <form class="panel vote hidden" id="voteForm">
-      <div class="topline">
-        <span id="progress">0/0</span>
-        <span>La Station</span>
-      </div>
-
-      <div id="categoryWrap"></div>
-
-      <div class="actions">
-        <button type="button" id="prevBtn">Retour</button>
-        <button type="button" id="nextBtn">Suivant</button>
-        <button type="submit" id="submitBtn" class="hidden">Valider mes votes</button>
-      </div>
-
-      <p class="warning">Après validation, impossible de revoter depuis la même connexion.</p>
-    </form>
-
     <section class="panel done hidden" id="donePanel">
-      <h2>Vote envoyé.</h2>
-      <p>Ton passage est enregistré. Maintenant attends le reveal.</p>
+      <h2>Résultats disponibles.</h2>
+      <p>Les votes sont terminés. Le reveal est maintenant ouvert.</p>
     </section>
 
     <section class="panel error hidden" id="errorPanel">
@@ -76,7 +60,5 @@
       <p id="errorText"></p>
     </section>
   </main>
-
-  <script src="/app.js"></script>
 </body>
 </html>
