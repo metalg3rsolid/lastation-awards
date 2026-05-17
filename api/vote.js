@@ -229,14 +229,18 @@ export default async function handler(req, res) {
 
     for (const [category, nominees] of Object.entries(scores)) {
 
-      const top3 =
-        Object.entries(nominees)
-          .sort((a, b) => b[1] - a[1])
-          .slice(0, 3)
-          .map(([name, votes]) => ({
-            name,
-            votes
-          }));
+     const top3 =
+  Object.entries(nominees)
+    .filter(([name]) => {
+      const clean = String(name).trim().toLowerCase();
+      return clean !== "aucun" && clean !== "aucune" && clean !== "";
+    })
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([name, votes]) => ({
+      name,
+      votes
+    }));
 
       results.push({
         name: category,
