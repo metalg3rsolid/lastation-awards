@@ -2,7 +2,7 @@ const medals = ["🥇", "🥈", "🥉"];
 
 async function loadResults() {
 
-  const res = await fetch("/api/results");
+  const res = await fetch("/api/vote?public=results");
   const data = await res.json();
 
   const container = document.getElementById("resultsContainer");
