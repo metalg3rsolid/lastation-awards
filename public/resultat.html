@@ -7,58 +7,50 @@
   <link rel="stylesheet" href="/style.css">
 
   <style>
+    .hero-clean .badge {
+      display: none;
+    }
+
     .result-card {
       cursor: pointer;
       overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease;
+      transition: .25s ease;
+      margin-bottom: 20px;
     }
 
     .result-card:hover {
       transform: translateY(-4px);
     }
 
-    .winner-box {
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: all .45s ease;
+    .hint {
+      opacity: .7;
+      font-weight: 700;
       margin-top: 10px;
     }
 
-    .winner-box.open {
-      max-height: 300px;
-      opacity: 1;
-      animation: popReveal .45s ease;
+    .winner-box {
+      margin-top: 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: .4s ease;
     }
 
-    @keyframes popReveal {
-      0% {
-        transform: scale(.95);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
+    .winner-box.open {
+      max-height: 600px;
     }
 
     .winner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 0;
-      border-bottom: 2px solid rgba(255,255,255,.08);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
       font-size: 20px;
       font-weight: 800;
     }
 
     .winner:last-child {
       border-bottom: none;
-    }
-
-    .medal {
-      font-size: 28px;
-      margin-right: 12px;
     }
 
     .winner-name {
@@ -68,30 +60,78 @@
 
     .winner-votes {
       color: #ffd84a;
+      font-size: 18px;
     }
 
-    .hint {
-      opacity: .65;
-      font-weight: 800;
-      margin-top: 10px;
+    .medal {
+      font-size: 28px;
+      margin-right: 12px;
     }
 
-    .hero-clean {
-      position: relative;
+    .delayed-winner {
+      opacity: 0;
+      transform: translateY(18px) scale(.96);
     }
 
-    .hero-clean .badge {
-      display: none;
+    .winner-box.open .delayed-winner {
+      animation: revealWinner .55s ease forwards;
     }
+
+    .winner-box.open .delay-0 {
+      animation-delay: .25s;
+    }
+
+    .winner-box.open .delay-1 {
+      animation-delay: 1.15s;
+    }
+
+    .winner-box.open .delay-2 {
+      animation-delay: 2.05s;
+    }
+
+    @keyframes revealWinner {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .glow-title {
+      animation: glowPulse 2s infinite;
+    }
+
+    @keyframes glowPulse {
+      0% {
+        opacity: .7;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: .7;
+      }
+    }
+
   </style>
 </head>
 
 <body>
+
   <main class="shell">
 
     <section class="hero hero-clean">
-      <h1>🏆 LES RÉSULTATS</h1>
-      <p>Clique sur une catégorie pour découvrir son vainqueur...</p>
+      <h1 class="glow-title">🏆 LES RÉSULTATS OFFICIELS</h1>
+
+      <p>
+        Clique sur une catégorie... et découvre progressivement le top 3.
+      </p>
     </section>
 
     <section id="resultsContainer"></section>
@@ -99,5 +139,6 @@
   </main>
 
   <script src="/resultat.js"></script>
+
 </body>
 </html>
